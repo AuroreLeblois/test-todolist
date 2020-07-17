@@ -1,0 +1,16 @@
+    <%- include('partials/header') %>
+    <div class="container">
+    <h1 META name="keywords" content="ToDoList d'Aurore Leblois">Ma ToDoList</h1>
+    <div id="container">
+        <h2 class="hidden">To-Do List</h2> 
+        <form action='/addTask' method='POST' id="myForm" ><input type="text" id="myInput" name="task" placeholder="Nouvelle Tache" required><button action='/addTask' method='POST'>Ajouter</button> </form>
+        <ul id="myUL">
+            <%for(const task of list){%>
+                <%if(task){%>
+            <li><a href="/<%=task.task%>"><i class="fa fa-trash"></i></a><%=task.task%></li>
+            <%}%>
+            <%}%>
+        </ul>
+    </div>
+    </div>
+    <%- include('partials/footer') %>
